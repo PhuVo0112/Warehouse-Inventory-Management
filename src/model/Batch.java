@@ -5,12 +5,14 @@ public class Batch {
     private String productId;
     private int quantity;
     private String importDate;
+    private String expiryDate;
 
-    public Batch(String batchId, String productId, int quantity, String importDate) {
+    public Batch(String batchId, String productId, int quantity, String importDate, String expiryDate) {
         this.batchId = batchId;
         this.productId = productId;
         this.quantity = quantity;
         this.importDate = importDate;
+        this.expiryDate = expiryDate;
     }
 
     public String getBatchId() {
@@ -29,6 +31,10 @@ public class Batch {
         return importDate;
     }
 
+    public String getExpiryDate() {
+        return expiryDate;
+    }
+
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
@@ -40,6 +46,7 @@ public class Batch {
                 ", productId='" + productId + '\'' +
                 ", quantity=" + quantity +
                 ", importDate='" + importDate + '\'' +
+                ", expiryDate='" + expiryDate + '\'' +
                 '}';
     }
 }

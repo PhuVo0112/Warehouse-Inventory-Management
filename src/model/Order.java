@@ -5,12 +5,14 @@ public class Order {
     private String productId;
     private int quantity;
     private String type;
+    private String expiryDate;
 
-    public Order(String orderId, String productId, int quantity, String type) {
+    public Order(String orderId, String productId, int quantity, String type, String expiryDate) {
         this.orderId = orderId;
         this.productId = productId;
         this.quantity = quantity;
         this.type = type;
+        this.expiryDate = expiryDate;
     }
 
     public String getOrderId() {
@@ -29,6 +31,10 @@ public class Order {
         return type;
     }
 
+    public String getExpiryDate() {
+        return expiryDate;
+    }
+
     @Override
     public String toString() {
         return "Order{" +
@@ -36,6 +42,7 @@ public class Order {
                 ", productId='" + productId + '\'' +
                 ", quantity=" + quantity +
                 ", type='" + type + '\'' +
+                ", expiryDate='" + expiryDate + '\'' +
                 '}';
     }
 }
