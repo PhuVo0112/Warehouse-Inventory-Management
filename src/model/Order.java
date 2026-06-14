@@ -15,10 +15,6 @@ public class Order {
         this.expiryDate = expiryDate;
     }
 
-    public Order(String o01, String p01, int i, String out) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
     public String getOrderId() {
         return orderId;
     }
