@@ -140,16 +140,18 @@ public class WarehouseManager {
         return true;
     }
 
-    public Product searchByName(String name) {
+    public ArrayList<Product> searchByName(String name) {
+        ArrayList<Product> result = new ArrayList<>();
         if (name == null) {
-            return null;
+            return result;
         }
+        String keyword = name.toLowerCase();
         for (Product p : productMap.values()) {
-            if (p.getName() != null && (p.getName().equals(name) || p.getName().contains(name))) {
-                return p;
+            if (p.getName() != null && p.getName().toLowerCase().contains(keyword)) {
+                result.add(p);
             }
         }
-        return null;
+        return result;
     }
 
     public ArrayList<Product> searchByCategory(String category) {

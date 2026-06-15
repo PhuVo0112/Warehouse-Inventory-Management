@@ -3,6 +3,7 @@ package view;
 import controller.WarehouseManager;
 import model.Product;
 import model.Order;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
@@ -21,9 +22,11 @@ public class Main {
         }
 
         System.out.println("\nSEARCH BY NAME ");
-        Product found = wm.searchByName("Mouse");
-        if (found != null) {
-            System.out.println(found);
+        ArrayList<Product> found = wm.searchByName("Mouse");
+        if (!found.isEmpty()) {
+            for (Product item : found) {
+                System.out.println(item);
+            }
         } else {
             System.out.println("Not found!");
         }
