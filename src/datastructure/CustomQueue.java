@@ -35,6 +35,30 @@ public class CustomQueue<T> {
         size++;
     }
 
+    public void enqueueSorted(T item, java.util.Comparator<T> comparator) {
+        Node<T> newNode = new Node<>(item);
+
+        if (isEmpty()) {
+            head = newNode;
+            tail = newNode;
+        } else if (comparator.compare(item, head.data) < 0) {
+            newNode.next = head;
+            head = newNode;
+        } else {
+            Node<T> current = head;
+            while (current.next != null && comparator.compare(item, current.next.data) >= 0) {
+                current = current.next;
+            }
+            newNode.next = current.next;
+            current.next = newNode;
+            if (newNode.next == null) {
+                tail = newNode;
+            }
+        }
+
+        size++;
+    }
+
     public T dequeue() {
         if (isEmpty()) {
             throw new IllegalStateException("Queue is empty");
