@@ -43,6 +43,10 @@ public class Product {
         return batches;
     }
 
+    public void addBatch(Batch batch) {
+        this.batches.enqueueSorted(batch, Batch::compareTo);
+    }
+
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
